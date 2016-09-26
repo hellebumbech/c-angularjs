@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app='LunchCheck'>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div ng-controller="LunchCheckController">
+      <span>Write a comma separated list of what you had for lunch:</span>
+      <br>
+      <textarea ng-class="textboxClass" ng-model="lunchInput" rows="8" cols="40"></textarea>
+      <br>
+      <button ng-click="checkLunch()" type="button">Check if too much</button>
+      <div ng-class="lunchAnswerClass">
+        {{lunchAnswer}}
+      </div>
+    </div>
+  <script type="text/javascript" src="angular.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+  <link rel="stylesheet" href="app.css" type="text/css">
+  </body>
+</html>
