@@ -29,7 +29,13 @@
     var service = this;
 
     var itemsBought = [];
-    var itemsToBuy = [new Item('Cookies', '10'), new Item('Sodas', '20')];
+    var itemsToBuy = [new Item('Cookies', '10'),
+                      new Item('Sodas', '20'),
+                      new Item('Milk', '3'),
+                      new Item('Bread', '16'),
+                      new Item('Oranges', '2'),
+                      new Item('Bananas', '4'),
+                      new Item('Carrot', '1')];
 
     service.buyItem = function(index) {
       var item = itemsToBuy.splice(index, 1);
