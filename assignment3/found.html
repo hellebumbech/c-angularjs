@@ -1,0 +1,14 @@
+<div class="clearfix"></div>
+
+<div>
+  <h3>Found items</h3>
+  <ol>
+    <li ng-repeat="item in list.foundItems">
+      {{ item.short_name }}: {{ item.name }}, {{ item.description }}
+      <button ng-click="list.onRemove({index: $index});">Remove Item</button>
+    </li>
+  </ol>
+  <div ng-if="list.foundItems.length == 0">
+      Nothing found!
+  </div>
+</div>
