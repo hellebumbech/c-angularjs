@@ -1,0 +1,17 @@
+<div class="container">
+  <div ng-if="MyInfoCtrl.user != undefined">
+    <span >Hi! This is your registered information:</span>
+    <br>
+    <br>
+    <ul>
+      <li>First name: {{ MyInfoCtrl.user.firstname }}</li>
+      <li>Last name: {{ MyInfoCtrl.user.lastname }}</li>
+      <li>Email: {{ MyInfoCtrl.user.email }}</li>
+      <li>Phone number: {{ MyInfoCtrl.user.phone }}</li>
+      <li>Favorite dish: {{ MyInfoCtrl.user.favorite_menu_item.short_name }} - {{ MyInfoCtrl.user.favorite_menu_item.name }} - {{ MyInfoCtrl.user.favorite_menu_item.description }}
+      <img class="img-responsive" width="250" height="150" ng-src="{{MyInfoCtrl.basePath}}/images/{{MyInfoCtrl.user.favorite_menu_item.short_name}}.jpg" alt="{{MyInfoCtrl.user.favorite_menu_item.short_name}}">
+      </li>
+    </ul>
+  </div>
+  <span ng-if="MyInfoCtrl.user == undefined">Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a></span>
+</div>

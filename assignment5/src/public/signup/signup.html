@@ -1,0 +1,24 @@
+<div class="container signupPage">
+<h1>Sign up for the newsletter!</h1>
+  <form name="signupForm" novalidate>
+    <input required type="text" name="firstname" placeholder="Enter your first name" ng-model="signupCtrl.user.firstname">
+    <span ng-if="signupForm.firstname.$error.required && signupForm.firstname.$touched">You must provide a first name</span>
+    <br>
+    <input required type="text" name="lastname" placeholder="Enter your last name" ng-model="signupCtrl.user.lastname">
+    <span ng-if="signupForm.lastname.$error.required && signupForm.lastname.$touched">You must provide a last name</span>
+    <br>
+    <input required type="email" name="email" placeholder="Enter your email address" ng-model="signupCtrl.user.email">
+    <span ng-if="!signupForm.email.$error.required && signupForm.email.$invalid && signupForm.email.$touched">The email address is invalid</span>
+    <span ng-if="signupForm.email.$error.required && signupForm.email.$touched">You must provide an email address</span>
+    <br>
+    <input type="text" pattern="(\d{3})-(\d{3})-(\d{4})" name="phone" placeholder="Enter your phone number" ng-model="signupCtrl.user.phone">
+    <span ng-if="signupForm.phone.$invalid && signupForm.phone.$touched">Phone must be in the format ###-###-####.</span>
+    <br>
+    <input type="text" name="favorite_dish" placeholder="Enter shortname of your favorite dish" ng-model="signupCtrl.user.favorite">
+    <span ng-if="signupCtrl.categoryExists == false">No such menu number exists</span>
+    <br>
+    <button type="submit" ng-disabled="signupForm.$invalid" ng-click="signupCtrl.submit()">Submit</button>
+  </form>
+  <br>
+  <span ng-if="signupCtrl.categoryExists == true">Your information has been saved</span>
+</div>
